@@ -2,6 +2,17 @@ spring:
   cassandra:
     contact-points: localhost
     port: 9042
-    keyspace-name: app
+    keyspace-name: feed_app
     local-datacenter: datacenter1
     schema-action: none
+
+  flyway:
+    enabled: true
+    url: jdbc:cassandra://localhost:9042/feed_app   # подключаемся к системному keyspace
+    user: cassandra
+    password: cassandra
+    locations: classpath:db/migration
+    sql-migration-suffixes: cql
+
+server:
+  port: 8087
