@@ -14,6 +14,8 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.5.4'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-cassandra', version: '3.5.4'
 
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.2.2'
+
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.13'
 
     implementation 'org.flywaydb:flyway-core:10.16.0'

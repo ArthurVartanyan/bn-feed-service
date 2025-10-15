@@ -3,8 +3,8 @@ CREATE KEYSPACE IF NOT EXISTS feed_app
 
 CREATE TABLE IF NOT EXISTS feed_app.feed_by_user
 (
-    user_id    text,
+    user_id    bigint,
     created_at timeuuid,
-    post_id    uuid,
+    post_id    bigint,
     PRIMARY KEY ((user_id), created_at, post_id)
 ) WITH CLUSTERING ORDER BY (created_at DESC, post_id ASC);

@@ -15,11 +15,11 @@ import java.util.UUID;
 public class FeedRow {
 
     @PrimaryKeyColumn(name = "user_id", type = PrimaryKeyType.PARTITIONED)
-    private String userId;
+    private Long userId;
 
     @PrimaryKeyColumn(name = "created_at", type = PrimaryKeyType.CLUSTERED, ordering = Ordering.DESCENDING)
-    private UUID createdAt; // timeuuid — можно генерировать через Uuids.timeBased()
+    private UUID createdAt;
 
     @PrimaryKeyColumn(name = "post_id", type = PrimaryKeyType.CLUSTERED, ordering = Ordering.ASCENDING)
-    private UUID postId;
+    private Long postId;
 }
