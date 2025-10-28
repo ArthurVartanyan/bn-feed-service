@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.5.4'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-cassandra', version: '3.5.4'
+    implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '3.3.10'
 
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.2.2'
 
