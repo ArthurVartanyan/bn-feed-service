@@ -17,8 +17,8 @@ public class FeedController {
     public void doS() {
         var feed = new FeedRow();
         feed.setCreatedAt(Uuids.timeBased());
-        feed.setUserId(Uuids.random().toString());
-        feed.setPostId(Uuids.random());
+        feed.setUserId(6L);
+        feed.setPostId(77L);
         feedRepository.save(feed);
     }
 }

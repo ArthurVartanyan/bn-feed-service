@@ -1,18 +1,20 @@
-package ru.bank.cosmo.scheduler;
+package ru.bank.cosmo.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
 import ru.bank.cosmo.dto.KafkaPostDTO;
 import ru.bank.cosmo.service.FeedService;
 
-import static ru.bank.cosmo.DateTimeUtil.fromLocalDateTime;
+import static ru.bank.cosmo.util.DateTimeUtil.fromLocalDateTime;
 
 @Slf4j
+@Component
 @RequiredArgsConstructor
-public class FeedScheduler {
+public class FeedConsumer {
 
     private final FeedService feedService;
     private final ObjectMapper objectMapper;
@@ -25,8 +27,8 @@ public class FeedScheduler {
         processPost(dto);
     }
 
-    private void processPost(KafkaPostDTO dto) {
-        log.info("Добавление поста в ленту: {}", dto);
-        feedService.addPostToFeed(dto.companyId(), dto.postId(), fromLocalDateTime(dto.createdAt()));
+    private void processPost(KafkaPostDTO postDTO) {
+        log.info("Добавление поста в ленту: {}", postDTO);
+        feedService.addPostToFeed(postDTO.companyId(), postDTO.postId(), fromLocalDateTime(postDTO.createdAt()));
     }
 }

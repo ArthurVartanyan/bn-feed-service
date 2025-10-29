@@ -1,4 +1,4 @@
-package ru.bank.cosmo;
+package ru.bank.cosmo.util;
 
 import com.datastax.oss.driver.api.core.uuid.Uuids;
 
