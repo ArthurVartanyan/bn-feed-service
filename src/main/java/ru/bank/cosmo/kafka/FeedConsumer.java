@@ -29,6 +29,6 @@ public class FeedConsumer {
 
     private void processPost(KafkaPostDTO postDTO) {
         log.info("Добавление поста в ленту: {}", postDTO);
-        feedService.addPostToFeed(postDTO.companyId(), postDTO.postId(), fromLocalDateTime(postDTO.createdAt()));
+        feedService.addPostToFeed(postDTO.companyId(), postDTO.postId(), fromLocalDateTime(postDTO.postCreateAt()));
     }
 }

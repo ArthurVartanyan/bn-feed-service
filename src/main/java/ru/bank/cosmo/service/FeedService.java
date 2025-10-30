@@ -17,7 +17,7 @@ public class FeedService {
 
     public void addPostToFeed(Long companyId, Long postId, UUID postCreationDateTime) {
         var response = subscriptionServiceClient.getSubscribers(companyId);
-        for (var userId : response.subscribers()) {
+        for (var userId : response.subscribersList()) {
             var newFeedRow = new FeedRow();
             newFeedRow.setPostId(postId);
             newFeedRow.setUserId(userId);
